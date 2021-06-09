@@ -35,33 +35,44 @@ function App() {
         fetchPokenames();
 
 
-
     }, [offset]);
 
 
     return (
         <>
-            <button disabled={!offset}
+            <div className="cardContainerMain">
+                <img className="logo"
+                     src="https://upload.wikimedia.org/wikipedia/commons/9/98/International_Pok%C3%A9mon_logo.svg"/>
+            </div>
+            <div className="buttonContainer">
+                <button
+                    className="navButtons"
+                    disabled={!offset}
                     onClick={() => handleClickPrevious()}
-            >
-                vorige
-            </button>
+                >
+                    vorige
+                </button>
 
-            <button
-                onClick={() => handleClickNext()}
-                    >
-                volgende
-            </button>
+                <button
+                    className="navButtons"
+                    onClick={() => handleClickNext()}
+                >
+                    volgende
+                </button>
+            </div>
 
-            <div className='cardContainerMain'>
-                {pokenames  ? (<div>{pokenames.map((pokename) => {
+            <div>
+
+                {pokenames ? (<div className="cards">{pokenames.map((pokename) => {
                         return <Pokemon nameOfPokemon={pokename.name}/>;
                     })}
                     </div>
                 ) : (
                     <h3> Loading... </h3>
                 )}
+
             </div>
+
         </>
     );
 }
