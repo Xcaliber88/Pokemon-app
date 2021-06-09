@@ -26,9 +26,9 @@ function Pokemon(props) {
     return (
         <div>
             {pokemon ? (
-                <div>
+                <div className="cardContainer">
                     <h1>{pokemon.name}</h1>
-                    <img src={pokemon.sprites.front_default}/>
+                    <img alt-text={pokemon.name} src={pokemon.sprites.front_default}/>
                     <h2> Moves: {pokemon.moves.length}</h2>
                     <h2>Weight:{pokemon.weight}</h2>
                     <div><h2>Abilities:</h2> {pokemon.abilities.map(ability => {

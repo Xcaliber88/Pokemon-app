@@ -1,0 +1,11 @@
+.cardContainerMain{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
+.cardContainer {
+    background-color: gold;
+    text-align: center;
+    border-radius: 10px;
+}
